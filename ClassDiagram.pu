@@ -1,0 +1,55 @@
+@startuml ClassDiagram.png
+
+class MapsActivity {
+    -mMap: GoogleMap
+    -mLocationManager: LocationManager
+    -mSharedPreferences: SharedPreferences
+    -mMarker: Marker
+    -checkLocationPermission()
+    -requestLocationUpdates()
+    
+}
+
+class LocationSearch {
+
+}
+
+class HttpAsyncTaskLoader {
+
+}
+
+class AsynkTaskLoader {
+
+}
+
+class GasStation {
+    -ShopName: String
+    -Brand: int
+    -Latitude: double
+    -Longitude: double
+    -Address: String
+
+    +setShopName(): void
+    +getShopName(): String
+    +setBrand(): void
+    +getBrand(): int
+    +setLatitude(): void
+    +getLatitude(): double
+    +setLongitude():void
+    +getLongitude(): double
+    +setAddress(): void
+    +getAddress(): double
+}
+
+class FilterDialog {
+
+}
+
+AsynkTaskLoader <|-- HttpAsyncTaskLoader
+MapsActivity ..> FilterDialog
+MapsActivity ..> LocationSearch
+MapsActivity ..> HttpAsyncTaskLoader
+HttpAsyncTaskLoader ..> GasStation
+
+
+@enduml
